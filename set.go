@@ -35,7 +35,7 @@ import (
 )
 
 // The primary type that represents a set
-type Set map[interface{}]struct{}
+type Set map[interface{}]bool
 
 // Creates and returns a reference to an empty set.
 func NewSet() Set {
@@ -54,7 +54,7 @@ func NewSetFromSlice(s []interface{}) Set {
 // Adds an item to the current set if it doesn't already exist in the set.
 func (set Set) Add(i interface{}) bool {
 	_, found := set[i]
-	set[i] = struct{}{}
+	set[i] = true 
 	return !found //False if it existed already
 }
 
